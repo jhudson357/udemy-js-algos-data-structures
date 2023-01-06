@@ -91,9 +91,34 @@ function countUniqueValues2(arr) {
   return i + 1
 }
 
-console.log(countUniqueValues2([1,1,1,2,3,3,4,4,5,6])) // 6
-console.log(countUniqueValues2([1,1,1,1,1,2])) // 2
-console.log(countUniqueValues2([1,2,3,4,4,4,7,7,12,12,13])) // 7
-console.log(countUniqueValues2([])) // 0
-console.log(countUniqueValues2([-2,-1,-1,0,1]))// 4
+// console.log(countUniqueValues2([1,1,1,2,3,3,4,4,5,6])) // 6
+// console.log(countUniqueValues2([1,1,1,1,1,2])) // 2
+// console.log(countUniqueValues2([1,2,3,4,4,4,7,7,12,12,13])) // 7
+// console.log(countUniqueValues2([])) // 0
+// console.log(countUniqueValues2([-2,-1,-1,0,1]))// 4
+
+
+// _____________________________________________
+// _____________________________________________
+
+
+// CODING EXERCISE 4 (Section 6)
+
+// Implement a function called areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. (this can be solved using the frequency counter pattern OR the multiple pointers pattern). Time O(N), Space O(N)
+
+function areThereDuplicates(...args) {
+  let j = args[args.length - 1]
+  for(let i = 0; i<args.length-1; i++) {
+    // console.log(i, args[i], j)
+    if(args[i] === j) {
+      return true
+    }
+  }
+  return false
+}
+
+
+console.log(areThereDuplicates(1, 2, 3)) // false
+console.log(areThereDuplicates(1, 2, 2)) // true 
+console.log(areThereDuplicates('a', 'b', 'c', 'a')) // true 
 
