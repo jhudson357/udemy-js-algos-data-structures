@@ -126,12 +126,50 @@ function validAnagram2(first, second) {
   return true
 }
 
-console.log(validAnagram2('catt', 'ttac')) // true
-console.log(validAnagram2('', '')) // true
-console.log(validAnagram2('aaz', 'zza')) // false
-console.log(validAnagram2('anagram', 'nagaram')) // true
-console.log(validAnagram2("rat","car")) // false) // false
-console.log(validAnagram2('awesome', 'awesom')) // false
-console.log(validAnagram2('qwerty', 'qeywrt')) // true
-console.log(validAnagram2('texttwisttime', 'timetwisttext')) // true
+// console.log(validAnagram2('catt', 'ttac')) // true
+// console.log(validAnagram2('', '')) // true
+// console.log(validAnagram2('aaz', 'zza')) // false
+// console.log(validAnagram2('anagram', 'nagaram')) // true
+// console.log(validAnagram2("rat","car")) // false) // false
+// console.log(validAnagram2('awesome', 'awesom')) // false
+// console.log(validAnagram2('qwerty', 'qeywrt')) // true
+// console.log(validAnagram2('texttwisttime', 'timetwisttext')) // true
+
+
+// _____________________________________________
+// _____________________________________________
+
+
+// CODING EXERCISE 3 (Section 6)
+
+// Write a function called sameFrequency. Given two positive integers, find out if the two numbers have the same frequency of digits. Time O(N)
+
+function sameFrequency(int1, int2) {
+  let count = {}
+  let str1 = int1.toString()
+  let str2 = int2.toString()
+
+  if(str1.length !== str2.length) return false
+  
+  for(let i=0; i<str1.length; i++) {
+    let num = str1[i]
+    count[num] ? count[num] += 1 : count[num] = 1
+  }
+  // console.log(count)
+
+  for(let i=0; i<str2.length; i++) {
+    let num = str2[i]
+    if(!(count[num])) {
+      return false
+    } else {
+      count[num] -= 1
+    }
+  }
+  return true
+}
+
+console.log(sameFrequency(182,281)) // true
+console.log(sameFrequency(34,14)) // false
+console.log(sameFrequency(3589578, 5879385)) // true
+console.log(sameFrequency(22,222)) // false
 
