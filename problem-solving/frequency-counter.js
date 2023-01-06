@@ -168,8 +168,66 @@ function sameFrequency(int1, int2) {
   return true
 }
 
-console.log(sameFrequency(182,281)) // true
-console.log(sameFrequency(34,14)) // false
-console.log(sameFrequency(3589578, 5879385)) // true
-console.log(sameFrequency(22,222)) // false
+// console.log(sameFrequency(182,281)) // true
+// console.log(sameFrequency(34,14)) // false
+// console.log(sameFrequency(3589578, 5879385)) // true
+// console.log(sameFrequency(22,222)) // false
+
+// _____________________________________________
+// _____________________________________________
+
+
+// CODING EXERCISE 4 (Section 6)
+
+// Implement a function called areThereDuplicates which accepts a variable number of arguments, and checks whether there are any duplicates among the arguments passed in. (this can be solved using the frequency counter pattern OR the multiple pointers pattern). Time O(N), Space O(N)
+
+
+function areThereDuplicates(...arg) {
+  let frequencyCounter = {}
+
+  for(let i = 0; i < arg.length; i++) {
+    let num = arg[i]
+    frequencyCounter[num] ? frequencyCounter[num] += 1 : frequencyCounter[num] = 1
+  }
+  // console.log(frequencyCounter)
+  for (let item in frequencyCounter) {
+    // console.log(frequencyCounter[item])
+    if(frequencyCounter[item] > 1) {
+      return true
+    }
+  }
+  return false
+}
+
+console.log(areThereDuplicates(1, 2, 3)) // false
+console.log(areThereDuplicates(1, 2, 2)) // true 
+console.log(areThereDuplicates('a', 'b', 'c', 'a')) // true 
+
+
+// function same2(arr1, arr2){
+//   if(arr1.length !== arr2.length){
+//       return false;
+//   }
+//   let frequencyCounter1 = {}
+//   let frequencyCounter2 = {}
+//   for(let val of arr1){
+//       frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1
+//     }
+//     for(let val of arr2){
+//       frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1        
+//     }
+//     for(let key in frequencyCounter1){
+//       if(!(key ** 2 in frequencyCounter2)){
+//         return false
+//       }
+//       if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
+//         return false
+//       }
+//     }
+//     // console.log(frequencyCounter1)
+//     // console.log(frequencyCounter2)
+//   return true
+// }
+
+// console.log(same2([1,2,3,2], [9,1,4,4]))
 
