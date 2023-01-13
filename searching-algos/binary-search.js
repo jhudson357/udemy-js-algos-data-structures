@@ -27,6 +27,8 @@ function binarySearch(arr, val) {
   return arr[middle] === val ? middle : -1
 }
 
+// time complexity (worst and avg case): O(log n)
+// time complexity (best case): O(1)
 
 console.log(binarySearch([2,5,6,9,13,15,28,30], 2))
 console.log(binarySearch([2,5,6,9,13,15,28,30], 28))
