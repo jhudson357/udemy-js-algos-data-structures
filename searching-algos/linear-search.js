@@ -12,5 +12,19 @@ function linearSearch(arr, val) {
     return -1
   }
 }
+// time complexity - O(N)
 
-console.log(linearSearch([1,2,3,4,5], 5))
+console.log(linearSearch([1,2,3,4,5], 6))
+
+// Option 2
+
+function linearSearch2(arr, val) {
+  for(let i=0; i<arr.length; i++) {
+    if (arr[i] === val) return i 
+  }
+  return -1
+}
+
+// time complexity - O(N)
+
+console.log(linearSearch2([167,2,322,44,5], 322))

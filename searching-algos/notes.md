@@ -9,3 +9,10 @@
   - includes
   - find
   - findIndex
+
+**BINARY SEARCH**
+- Binary search is a much faster form of search
+- Rather than eliminating one element at a time, you can eliminate half of the remaining elements at a time
+- BINARY SEARCH ONLY WORKS ON SORTED ARRAYS
+
+- Divide and Conquer - split array in half, then check if the desired value is greater than or less than the middle value. Eliminate the half that doesn't contain the desired value. Repeat until you find the desired value.
