@@ -18,3 +18,6 @@
 **BUBBLE SORT**
 - A sorting algo where the largest values bubble up to the top
 - Should only use when your data is already nearly sorted
+
+**SELECTION SORT**
+- Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position
