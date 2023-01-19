@@ -18,6 +18,19 @@
 **BUBBLE SORT**
 - A sorting algo where the largest values bubble up to the top
 - Should only use when your data is already nearly sorted
+- TIME COMPLEXITY: O(N^2)
+- SPACE COMPLEXITY O(1)
 
 **SELECTION SORT**
 - Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position
+- Not efficient - Time complexity = O(N^2)
+- Only better than bubble sort if you want to minimize the number of swaps you're making
+- TIME COMPLEXITY: O(N^2)
+- SPACE COMPLEXITY O(1)
+
+**INSERTION SORT**
+- Builds up the sort by gradually creating a larger left half which is always sorted
+- Insertion sort good for online algorithm (algo that can work as new data is coming in while already being sorted)
+- Good for nearly sorted data
+- TIME COMPLEXITY: O(N^2)
+- SPACE COMPLEXITY O(1)
