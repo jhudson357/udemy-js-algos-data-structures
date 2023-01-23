@@ -16,3 +16,9 @@
 - The runtime of quick sort depends in part on how one selects the pivot
 - Ideally, the pivot should be chosen so that it's roughly the median value in the data set you're sorting
 - For simplicity, we'll always choose the pivot to be the first element (we'll talk about consequences of this later)
+
+**Big O of Quicksort**
+- Time Complexity (Best) - O(n log n)
+- Time Complexity (Avg) - O(n log n)
+- Time Complexity (Worst) - O(n^2)
+- Space Complexity - O(log n)
