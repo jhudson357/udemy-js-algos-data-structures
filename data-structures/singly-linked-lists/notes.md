@@ -100,3 +100,16 @@ Arrays
 - Set prev to be the value of the node variable
 - Set the node variable to be the value of the next variable
 - Once you have finished looping, return the list
+
+
+**Big O of Singly Linked Lists**
+Insertion - O(1)
+Removal - It depends... O(1) or O(N)
+Searching - O(N)
+Access - O(N)
+
+
+**Recap**
+- Singly linked lists are an excellent alternative to arrays when insertion and deletion at the beginning are frequently required
+- Arrays contain a built in index whereas Linked lists do not
+- The idea of a list data structure that consists of nodes is the foundation for other data structures like Stacks and Queues
