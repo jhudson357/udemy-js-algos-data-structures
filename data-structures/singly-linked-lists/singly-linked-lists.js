@@ -83,10 +83,36 @@ class SinglyLinkedList{
   }
 
   set(idx, val) {
-    let replacedNode = list.get(idx)
+    let replacedNode = this.get(idx)
     if(!replacedNode) return false
     replacedNode.val = val
     return true
+  }
+
+  insert(idx, val) {
+    if(idx < 0 || idx > this.length) return false
+    if(idx === this.length) return !!this.push(val)
+    if(idx === 0) return !!this.unshift(val)
+    
+    let leftNode = this.get(idx-1)
+    let newNode = new Node(val)
+    let previousNextNode = leftNode.next
+    leftNode.next = newNode
+    newNode.next = previousNextNode
+    this.length++
+    return true
+  }
+
+  remove(idx) {
+    if(idx < 0 || idx >= this.length) return undefined
+    if(idx === this.length - 1) return this.pop()
+    if(idx === 0) return this.shift()
+
+    let nodeLeftOfRemoved = this.get(idx-1)
+    let removedNode = this.get(idx)
+    nodeLeftOfRemoved.next = removedNode.next
+    this.length--
+    return removedNode
   }
 
 }
@@ -94,11 +120,10 @@ class SinglyLinkedList{
 
 
 let list = new SinglyLinkedList()
-list.push('Hello')
-list.push('Goodbye')
-list.push('!')
-list.push('<3')
-list.push(':)')
+list.push(100)
+list.push(200)
+list.push(300)
+list.push(400)
 // console.log(list)
 // list.pop()
 // list.pop()
@@ -106,9 +131,19 @@ list.push(':)')
 // list.shift()
 // list.shift()
 // list.unshift('Yo Yo Yo')
-console.log(list.get(1))
-console.log(list.set(1, 'Dog'))
-console.log(list.get(1))
+// console.log(list.get(1))
+// console.log(list.set(1, 'Dog'))
+// console.log(list.get(1))
+// console.log(list.insert(2, 1000))
+// console.log(list.get(2))
+// console.log(list.insert(5, 2000))
+// console.log(list.get(5))
+// console.log(list.insert(0, 0))
+// console.log(list.get(0))
+console.log(list.get(2))
+console.log(list.remove(2))
+console.log(list.get(2))
+
 
 
 // console.log(list)
