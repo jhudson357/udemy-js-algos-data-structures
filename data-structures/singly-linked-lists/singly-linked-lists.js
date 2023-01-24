@@ -71,6 +71,24 @@ class SinglyLinkedList{
     return this
   }
 
+  get(idx) {
+    if(idx < 0 || idx >= this.length) return null
+    let count = 0
+    let currentNode = this.head
+    while(count < idx) {
+      currentNode = currentNode.next
+      count++
+    }
+    return currentNode
+  }
+
+  set(idx, val) {
+    let replacedNode = list.get(idx)
+    if(!replacedNode) return false
+    replacedNode.val = val
+    return true
+  }
+
 }
 
 
@@ -79,16 +97,21 @@ let list = new SinglyLinkedList()
 list.push('Hello')
 list.push('Goodbye')
 list.push('!')
-console.log(list)
+list.push('<3')
+list.push(':)')
+// console.log(list)
 // list.pop()
 // list.pop()
 // list.pop()
 // list.shift()
 // list.shift()
-list.unshift('Yo Yo Yo')
+// list.unshift('Yo Yo Yo')
+console.log(list.get(1))
+console.log(list.set(1, 'Dog'))
+console.log(list.get(1))
 
 
-console.log(list)
+// console.log(list)
 // console.log(list.head)
 // console.log(list.head.next)
 // console.log(list.tail)
