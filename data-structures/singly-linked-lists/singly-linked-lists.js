@@ -115,6 +115,34 @@ class SinglyLinkedList{
     return removedNode
   }
 
+  print() {
+    let arr = []
+    let current = this.head
+    while(current) {
+      arr.push(current.val)
+      current = current.next
+    }
+    console.log(arr)
+  }
+
+  reverse() {
+    // swap the head and tail
+    let node = this.head
+    this.head = this.tail
+    this.tail = node
+
+    let next
+    let prev = null
+
+    for(let i = 0; i < this.length; i++) {
+      next = node.next
+      node.next = prev
+      prev = node
+      node = next
+    }
+    return this
+  }
+
 }
 
 
@@ -124,6 +152,7 @@ list.push(100)
 list.push(200)
 list.push(300)
 list.push(400)
+list.push(500)
 // console.log(list)
 // list.pop()
 // list.pop()
@@ -140,10 +169,11 @@ list.push(400)
 // console.log(list.get(5))
 // console.log(list.insert(0, 0))
 // console.log(list.get(0))
-console.log(list.get(2))
-console.log(list.remove(2))
-console.log(list.get(2))
-
+// console.log(list.get(2))
+// console.log(list.remove(2))
+// console.log(list.get(2))
+console.log(list.reverse())
+console.log(list.print())
 
 
 // console.log(list)
