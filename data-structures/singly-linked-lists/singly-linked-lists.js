@@ -45,6 +45,32 @@ class SinglyLinkedList{
     }
     return current
   }
+
+  shift() {
+    if(!this.head) return undefined
+    let current = this.head
+    this.head = current.next
+    this.length--
+    if(this.length === 0) {
+      this.head = null
+      this.tail = null
+    }
+    return current
+  }
+
+  unshift(val) {
+    let newNode = new Node(val)
+    if(!this.head) {
+      this.head = newNode
+      this.tail = this.head
+    } else {
+      newNode.next = this.head
+      this.head = newNode
+    }
+    this.length++
+    return this
+  }
+
 }
 
 
@@ -54,9 +80,13 @@ list.push('Hello')
 list.push('Goodbye')
 list.push('!')
 console.log(list)
-list.pop()
-list.pop()
-list.pop()
+// list.pop()
+// list.pop()
+// list.pop()
+// list.shift()
+// list.shift()
+list.unshift('Yo Yo Yo')
+
 
 console.log(list)
 // console.log(list.head)
