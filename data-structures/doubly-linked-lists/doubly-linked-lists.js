@@ -114,6 +114,25 @@ class DoublyLinkedList {
     return false
   }
 
+  insert(idx, val) {
+    if(idx < 0 || idx > this.length) return false
+    if(idx === 0) return !!this.unshift(val)
+    if(idx === this.length) return !!this.push(val)
+
+    let beforeNode = this.get(idx - 1)
+    let newNode =  new Node(val)
+    let afterNode = beforeNode.next
+    
+    beforeNode.next = newNode
+    newNode.prev = beforeNode
+    afterNode.prev = newNode
+    newNode.next = afterNode
+    
+    this.length++
+    return true
+
+  }
+
 }
 
 
@@ -132,7 +151,8 @@ console.log('--------------------')
 // console.log(list.unshift(50))
 console.log(list.get(3))
 console.log('--------------------')
-console.log(list.set(2, 1000))
+console.log(list.set(5, 1000))
+list.insert(2, -100)
 console.log(list.print())
 console.log('--------------------')
 
