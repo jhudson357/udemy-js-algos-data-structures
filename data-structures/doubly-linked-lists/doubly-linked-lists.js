@@ -90,7 +90,7 @@ class DoublyLinkedList {
       var currentNode = this.head
       while (count < idx) {
         currentNode = currentNode.next
-        console.log('first half')
+        // console.log('first half')
         count++
       }
     } else {
@@ -98,30 +98,42 @@ class DoublyLinkedList {
       let count = this.length - 1
       while(count > idx) {
         currentNode = currentNode.prev
-        console.log('second half')
+        // console.log('second half')
         count--
       }
     }
     return currentNode
   }
+
+  set(idx, val) {
+    if(this.get(idx)) {
+      let setNode = this.get(idx)
+      setNode.val = val
+      return true
+    }
+    return false
+  }
+
 }
 
 
 
 let list = new DoublyLinkedList()
-console.log(list.push(99))
-console.log('--------------------')
-console.log(list.push(100))
-console.log('--------------------')
-console.log(list.push(101))
+console.log(list.push(0))
+list.push(100)
+list.push(200)
+list.push(300)
+list.push(400)
+list.push(500)
+console.log(list.print())
 console.log('--------------------')
 // console.log(list.pop())
 // console.log(list.shift())
-console.log(list.unshift(50))
-console.log(list.unshift(25))
-console.log('--------------------')
+// console.log(list.unshift(50))
 console.log(list.get(3))
+console.log('--------------------')
+console.log(list.set(2, 1000))
+console.log(list.print())
 console.log('--------------------')
 
 console.log(list)
-console.log(list.print())
