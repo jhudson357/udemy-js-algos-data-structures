@@ -14,6 +14,16 @@ class DoublyLinkedList {
   }
 
   // methods
+  print() {
+    let arr = []
+    let current = this.head
+    while(current) {
+      arr.push(current.val)
+      current = current.next
+    }
+    console.log(arr)
+  }
+
   push(val) {
     let newNode = new Node(val)
     if(!this.head) {
@@ -73,15 +83,26 @@ class DoublyLinkedList {
     return list
   }
 
-
-  print() {
-    let arr = []
-    let current = this.head
-    while(current) {
-      arr.push(current.val)
-      current = current.next
+  get(idx) {
+    if(idx < 0 || idx >= this.length) return null
+    if(idx <= Math.floor(this.length / 2)) {
+      let count = 0
+      var currentNode = this.head
+      while (count < idx) {
+        currentNode = currentNode.next
+        console.log('first half')
+        count++
+      }
+    } else {
+      var currentNode = this.tail
+      let count = this.length - 1
+      while(count > idx) {
+        currentNode = currentNode.prev
+        console.log('second half')
+        count--
+      }
     }
-    console.log(arr)
+    return currentNode
   }
 }
 
@@ -97,6 +118,9 @@ console.log('--------------------')
 // console.log(list.pop())
 // console.log(list.shift())
 console.log(list.unshift(50))
+console.log(list.unshift(25))
+console.log('--------------------')
+console.log(list.get(3))
 console.log('--------------------')
 
 console.log(list)
