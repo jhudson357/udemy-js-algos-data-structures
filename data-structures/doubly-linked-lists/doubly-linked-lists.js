@@ -41,7 +41,22 @@ class DoublyLinkedList {
     }
     this.length--
     return removedTail
-  }  
+  }
+  
+  shift() {
+    if(this.length === 0) return undefined
+    let oldHead = this.head
+    if(this.length === 1) {
+      this.head = null
+      this.tail = null
+    } else {
+      this.head = oldHead.next
+      this.head.prev = null
+      oldHead.next = null
+    }
+    this.length--
+    return oldHead
+  }
 
 }
 
@@ -52,7 +67,8 @@ console.log(list.push(100))
 console.log('--------------------')
 console.log(list.push(101))
 console.log('--------------------')
-console.log(list.pop())
+// console.log(list.pop())
+console.log(list.shift())
 console.log('--------------------')
 
 console.log(list)
