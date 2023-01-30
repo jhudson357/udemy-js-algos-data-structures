@@ -28,10 +28,31 @@ class DoublyLinkedList {
     return this
   }
 
+  pop() {
+    if(!this.head) return undefined
+    let removedTail = this.tail
+    if(this.length === 1) {
+      this.head = null
+      this.tail = null
+    } else {
+      this.tail = this.tail.prev
+      this.tail.next = null
+      removedTail.prev = null
+    }
+    this.length--
+    return removedTail
+  }  
+
 }
 
 let list = new DoublyLinkedList()
 console.log(list.push(99))
+console.log('--------------------')
 console.log(list.push(100))
+console.log('--------------------')
+console.log(list.push(101))
+console.log('--------------------')
+console.log(list.pop())
+console.log('--------------------')
 
 console.log(list)
