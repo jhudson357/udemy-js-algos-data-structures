@@ -78,7 +78,7 @@
 
 *Insert*
 ** Adding a node in a Doubly Linked List by a certain position
-- If the index is less than zero or greater than or equal to the length return false
+- If the index is less than zero or greater than the length return false
 - If the index is 0, unshift
 - If the index is the same as the length, push
 - Use the get method to access the index -1
@@ -96,6 +96,14 @@
 - Set next and prev to null on the found node
 - Decrement the length
 - Return the removed node.
+
+*Reverse*
+** Reversing a Doubly Linked List in place
+- Create a variable called current and set it to be the head of the list
+- Create a variable called tail and set it to be the head of the list
+- Loop through the list and set the next property of the current node to be the prev property of the current node
+- If there is no next property, set the tail to be the head and the head to be the current variable
+- Return the list
 
 
 **Big O of Doubly Linked Lists**

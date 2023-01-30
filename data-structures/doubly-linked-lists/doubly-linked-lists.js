@@ -151,28 +151,53 @@ class DoublyLinkedList {
     return foundNode
   }
 
+  reverse() {
+    if(!this.head) return undefined
+    
+    // swap head and tail
+    let node = this.head
+    this.head = this.tail
+    this.tail = node
+
+    let count = 0
+    let prev = null
+    let next
+
+    while(count < this.length) {
+      next = node.next
+      node.prev = next
+      node.next = prev
+      prev = node
+      node = next
+      count++
+    }
+    return this
+  }
+
 }
 
 
 
 let list = new DoublyLinkedList()
-console.log(list.push(0))
+list.push(0)
 list.push(100)
 list.push(200)
 list.push(300)
 list.push(400)
 list.push(500)
-console.log(list.print())
+// console.log(list.print())
 console.log('--------------------')
 // console.log(list.pop())
 // console.log(list.shift())
 // console.log(list.unshift(50))
 // console.log(list.get(3))
-console.log('--------------------')
+// console.log('--------------------')
 // console.log(list.set(5, 1000))
 // list.insert(2, -100)
-console.log(list.remove(2))
+// console.log(list.remove(2))
+console.log(list.print())
+list.reverse()
 console.log(list.print())
 console.log('--------------------')
 
-console.log(list)
+// console.log(list)
