@@ -45,3 +45,26 @@
 - Set the old head's next to null
 - Decrement the length
 - Return old head
+
+*Unshifting*
+** Adding a node to the beginning of the Doubly Linked List
+- Create a new node with the value passed to the function
+- If the length is 0
+  - Set the head to be the new node
+  - Set the tail to be the new node
+- Otherwise
+  - Set the prev property on the head of the list to be the new node
+  - Set the next property on the new node to be the head property 
+  - Update the head to be the new node
+- Increment the length
+- Return the list
+
+*Get*
+** Accessing a node in a Doubly Linked List by its position
+- If the index is less than 0 or greater or equal to the length, return null
+- If the index is less than or equal to half the length of the list
+  - Loop through the list starting from the head and loop towards the middle
+  - Return the node once it is found
+- If the index is greater than half the length of the list
+- ​ Loop through the list starting from the tail and loop towards the middle
+  - Return the node once it is found
