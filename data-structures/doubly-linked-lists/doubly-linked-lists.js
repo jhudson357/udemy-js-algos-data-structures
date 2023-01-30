@@ -130,7 +130,25 @@ class DoublyLinkedList {
     
     this.length++
     return true
+  }
 
+  remove(idx) {
+    if(idx < 0 || idx >= this.length) return false
+    if(idx === 0) return !!this.shift(idx)
+    if(idx === this.length-1) return !!this.pop(idx)
+
+    let foundNode = this.get(idx)
+    let beforeNode = this.get(idx - 1)
+    let afterNode = this.get(idx + 1)
+    
+    foundNode.next = null
+    foundNode.prev = null
+
+    beforeNode.next = afterNode
+    afterNode.prev = beforeNode
+
+    this.length--
+    return foundNode
   }
 
 }
@@ -149,10 +167,11 @@ console.log('--------------------')
 // console.log(list.pop())
 // console.log(list.shift())
 // console.log(list.unshift(50))
-console.log(list.get(3))
+// console.log(list.get(3))
 console.log('--------------------')
-console.log(list.set(5, 1000))
-list.insert(2, -100)
+// console.log(list.set(5, 1000))
+// list.insert(2, -100)
+console.log(list.remove(2))
 console.log(list.print())
 console.log('--------------------')
 
