@@ -40,17 +40,35 @@ class BinarySearchTree {
     }
   }
 
+  find(value) {
+    if(this.root === null) return false
+    let current = this.root
+    let found = false
+    while(current && !found) {
+      if(value < current.value) {
+        current = current.left
+      } else if(value > current.value) {
+        current = current.right
+      } else {
+        found = true
+      }
+    }
+    if(!found) return undefined
+    return current
+  }
+
 }
 
 let tree = new BinarySearchTree()
-console.log(tree.insert(10))
-console.log(tree.insert(5))
-console.log(tree.insert(13))
-console.log(tree.insert(11))
-console.log(tree.insert(2))
-console.log(tree.insert(16))
-console.log(tree.insert(7))
-console.log(tree.insert(7))
+tree.insert(10)
+tree.insert(5)
+tree.insert(13)
+tree.insert(11)
+tree.insert(2)
+tree.insert(16)
+tree.insert(7)
+console.log(tree.find(100))
+console.log(tree.find(16))
 
 // tree.root = new Node(10)
 // tree.root.right = new Node(15)

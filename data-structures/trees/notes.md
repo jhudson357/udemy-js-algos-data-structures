@@ -37,7 +37,7 @@
   - Every child greater than the parent value is stored on the right of the parent
 
 *Why are binary search trees used?*
-- very simple for searching with the way it's sorted
+- Searching is very simple given the way it's sorted
 - With every comparison, we should roughly chop in half the data we're looking thru (dependent on how the tree is distributed)
 
 **BST Method Pseudocode**
@@ -55,3 +55,23 @@
       - If there is, move to that node and repeat these steps
       - If there is not, add that node as the left property
 - Return the entire tree
+
+*Finding a Node in a BST*
+- Starting at the root
+  - Check if there is a root, if not - we're done searching!
+  - If there is a root, check if the value of the new node is the value we are looking for. If we found it, we're done!
+  - If not, check to see if the value is greater than or less than the value of the root
+  - If it is greater 
+    - Check to see if there is a node to the right
+      - If there is, move to that node and repeat these steps
+      - If there is not, we're done searching!
+  - If it is less
+    - Check to see if there is a node to the left
+      - If there is, move to that node and repeat these steps
+      - If there is not, we're done searching!
+
+**Big O of BST**
+** Best and avg case
+- Insertion - O(log n)
+- Searching - O(log n)
+  - **NOT guaranteed!
