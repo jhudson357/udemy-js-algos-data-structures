@@ -3,7 +3,7 @@
 **Two Ways**
 1. Breadth-first Search (BFS)
    1. going across (left to right thru tree)
-2. Depth-first Search (DFS)
+2. Depth-first Search (DFS) - traversing down the tree rather than horizontally like BFS
    1. InOrder
    2. PreOrder
    3. PostOrder
@@ -17,3 +17,33 @@
   - If there is a left property on the node dequeued - add it to the queue
   - If there is a right property on the node dequeued - add it to the queue
 - Return the variable that stores the values
+
+*Depth-first Search (DFS)*
+**PreOrder**
+- Create a variable to store the values of nodes visited
+- Store the root of the BST in a variable called current
+- Write a helper function which accepts a node
+  - Push the value of the node to the variable that stores the values
+  - If the node has a left property, call the helper function with the left property on the node
+  - If the node has a right property, call the helper function with the right property on the node
+- Invoke the helper function with the current variable
+
+**PostOrder**
+- Create a variable to store the values of nodes visited
+- Store the root of the BST in a variable called current
+- Write a helper function which accepts a node
+  - If the node has a left property, call the helper function with the left property on the node
+  - If the node has a right property, call the helper function with the right property on the node
+  - Push the value of the node to the variable that stores the values
+  - Invoke the helper function with the current variable
+- Return the array of values
+
+**InOrder**
+- Create a variable to store the values of nodes visited
+- Store the root of the BST in a variable called current
+- Write a helper function which accepts a node
+  - If the node has a left property, call the helper function with the left property on the node
+  - Push the value of the node to the variable that stores the values
+  - If the node has a right property, call the helper function with the right property on the node
+- Invoke the helper function with the current variable
+- Return the array of values
