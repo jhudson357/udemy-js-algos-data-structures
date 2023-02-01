@@ -47,3 +47,24 @@
   - If the node has a right property, call the helper function with the right property on the node
 - Invoke the helper function with the current variable
 - Return the array of values
+
+
+**BFS vs DFS ??**
+- Depends on the tree
+- Time complexity is the same for each --> need to think about space complexity
+- If your tree is fully fleshed out/wide (huge tree), then depth-first search is better (less data to store in queue memory)
+- If your tree is deep/long/slim (like a list) - will only have one thing in queue/memory --> breadth first search is good
+
+**Pre vs Post vs InOrder ??**
+- InOrder
+  - Used commonly with BSTs
+  - We get all nodes in the tree in their underlying order (smallest to greatest)
+- PreOrder
+  - Can be used to 'export' a tree structure so that it is easily reconstructed or copied
+
+
+**RECAP**
+- Trees are non-linear data structures that contain a root and child nodes
+- Binary Trees can have values of any type, but at most two children for each parent
+- Binary Search Trees are a more specific version of binary trees where every node to the left of a parent is less than it's value and every node to the right is greater
+- We can search through Trees using BFS and DFS
