@@ -54,7 +54,22 @@
 - The procedure for deleting the root from the heap (effectively extracting the maximum element in a max-heap or the minimum element in a min-heap) and restoring the properties is called down-heap (also known as bubble-down, percolate-down, sift-down, trickle down, heapify-down, cascade-down, and extract-min/max)
 
 
-**Buildign a Priority Queue**
+**Building a Priority Queue**
 -.
 *What is a Priority Queue?*
 - A data structure where each element has a priority. Elements with higher priorities are served before elements with lower priorities.
+- Priority queues are separate from heaps - can be implemented with other data structures (it's an abstract concept)
+
+**Priority Queue Pseudocode**
+- Write a Min Binary Heap - lower number means higher priority.
+- Each Node has a val and a priority.  Use the priority to build the heap.
+- *Enqueue* method accepts a value and priority, makes a new node, and puts it in the right spot based off of its priority.
+- *Dequeue* method removes root element, returns it, and rearranges heap using priority.
+
+
+**Big O of Binary Heaps**
+- Insertion - O(log N)
+- Removal - O(log N)
+- Search - O(N)
+
+* Binary heaps not made to be searchable, better to use BST
