@@ -56,9 +56,24 @@
 3. Retrieves the key-value pair in the hash table
 4. If the key isn't found, returns undefined
 
-*Keys / Values*
+*Keys / Values* (not as important)
 ** keys
 1. Loops thru the hash table array and returns an array of keys in the table
 
 ** values
 1. Loops through the hash table array and returns an array of values in the table
+
+
+**Big O of Hash Tables** (avg case)
+- Insert - O(1) (constant)
+- Deletion - O(1) 
+- Access - O(1)
+
+**RECAP**
+- Hash tables are collections of key-value pairs
+- Hash tables can find values quickly given a key
+- Hash tables can add new key-values quickly
+- Hash tables store data in a large array, and work by hashing the keys
+- A good hash should be fast, distribute keys uniformly, and be deterministic
+- Separate chaining and linear probing are two strategies used to deal with two keys that hash to the same index
+- When in doubt, use a hash table!
